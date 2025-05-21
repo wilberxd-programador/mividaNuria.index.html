@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💖 Pregunta Importante 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            overflow: hidden; /* Evita el desplazamiento cuando aparezcan muchas imágenes */
+        }
+        h1 {
+            color: #ff4081;
+        }
+        .opcion {
+            font-size: 20px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            cursor: pointer;
+        }
+        #respuesta {
+            font-size: 22px;
+            color: #ff4081;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        img {
+            width: 200px;
+            margin-top: 20px;
+        }
+        .extra-garu {
+            width: 150px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mi amor, me querés mucho?</h1>
+    <img id="imagenSnoopy" src="https://www.deviantart.com/bradsnoopy97/art/Sad-Snoopy-964249982" alt="Snoopy triste">
+
+    <div>
+        <span class="opcion" onclick="respuesta(true)">Sí 😍</span>
+        <span class="opcion" onclick="respuesta(false)">No 😜</span>
+    </div>
+
+    <p id="respuesta"></p>
+
+    <script>
+        let contadorNo = 0;
+        let intervaloGaru;
+
+        function respuesta(acepta) {
+            if (acepta) {
+                document.getElementById("respuesta").innerText = "Que linda mi amor, te amo mucho 💕";
+                clearInterval(intervaloGaru); // Detener el bucle de Garu cuando elijan "Sí"
+                document.getElementById("imagenSnoopy").src = "https://www.pinterest.jp/pin/543457880024363919/"; // Cambiar a Snoopy feliz con corazones
+                document.getElementById("imagenSnoopy").alt = "Snoopy feliz con Woodstock y corazones";
+            } else {
+                contadorNo++;
+                let mensajes = ["Por qué no mi amor?", "Cómo que no amigo", "Oh, matate", "Matate amigo"];
+                let mensaje = contadorNo >= 4 ? mensajes[3] : mensajes[contadorNo - 1];
+                document.getElementById("respuesta").innerText = mensaje;
+
+                // A partir de la cuarta vez, iniciar el bucle de imágenes de Garu
+                if (contadorNo >= 4 && !intervaloGaru) {
+                    intervaloGaru = setInterval(() => {
+                        let imagenGaru = document.createElement("img");
+                        imagenGaru.src = "https://br.pinterest.com/pin/73253931434104774/";
+                        imagenGaru.alt = "Garu enojado";
+                        imagenGaru.classList.add("extra-garu");
+
+                        // Posición aleatoria en la pantalla
+                        imagenGaru.style.left = Math.random() * (window.innerWidth - 150) + "px";
+                        imagenGaru.style.top = Math.random() * (window.innerHeight - 150) + "px";
+
+                        document.body.appendChild(imagenGaru);
+                    }, 1000); // Cada segundo aparece una nueva imagen de Garu
+                }
+            }
+        }
+    </script>
+</body>
+</html>
