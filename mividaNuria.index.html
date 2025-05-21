@@ -39,7 +39,7 @@
 </head>
 <body>
     <h1>Mi amor, me querés mucho?</h1>
-    <img id="imagenSnoopy" src="https://www.deviantart.com/bradsnoopy97/art/Sad-Snoopy-964249982" alt="Snoopy triste">
+    <img id="imagensnoopy" src="https://www.deviantart.com/bradsnoopy97/art/Sad-Snoopy-964249982" alt="Snoopy triste">
 
     <div>
         <span class="opcion" onclick="respuesta(true)">Sí 😍</span>
@@ -56,8 +56,8 @@
             if (acepta) {
                 document.getElementById("respuesta").innerText = "Que linda mi amor, te amo mucho 💕";
                 clearInterval(intervaloGaru); // Detener el bucle de Garu cuando elijan "Sí"
-                document.getElementById("imagenSnoopy").src = "https://www.pinterest.jp/pin/543457880024363919/"; // Cambiar a Snoopy feliz con corazones
-                document.getElementById("imagenSnoopy").alt = "Snoopy feliz con Woodstock y corazones";
+                document.getElementById("imagensnoopy").src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3JcN6FWh__xBoIgk8tLpdvSI_lFwUkwuUeg&s"; // Cambiar a Snoopy feliz con corazones
+                document.getElementById("imagensnoopy").alt = "https://w7.pngwing.com/pngs/379/331/png-transparent-snoopy-charlie-brown-lucy-van-pelt-wood-peanuts-snoopy-love-miscellaneous-comics.png";
             } else {
                 contadorNo++;
                 let mensajes = ["Por qué no mi amor?", "Cómo que no amigo", "Oh, matate", "Matate amigo"];
@@ -66,17 +66,17 @@
 
                 // A partir de la cuarta vez, iniciar el bucle de imágenes de Garu
                 if (contadorNo >= 4 && !intervaloGaru) {
-                    intervaloGaru = setInterval(() => {
+                    intervalogaru = setInterval(() => {
                         let imagenGaru = document.createElement("img");
-                        imagenGaru.src = "https://br.pinterest.com/pin/73253931434104774/";
-                        imagenGaru.alt = "Garu enojado";
-                        imagenGaru.classList.add("extra-garu");
+                        imagengaru.src = "https://i.pinimg.com/736x/79/78/ac/7978acf7a79680c79a1cf1de2af3865e.jpg";
+                        imagengaru.alt = "https://i.pinimg.com/originals/cd/3a/3c/cd3a3c73c632ad35ec57564bba76fdb3.jpg";
+                        imagengaru.classList.add("extra-garu");
 
                         // Posición aleatoria en la pantalla
-                        imagenGaru.style.left = Math.random() * (window.innerWidth - 150) + "px";
-                        imagenGaru.style.top = Math.random() * (window.innerHeight - 150) + "px";
+                        imagengaru.style.left = Math.random() * (window.innerWidth - 150) + "px";
+                        imagengaru.style.top = Math.random() * (window.innerHeight - 150) + "px";
 
-                        document.body.appendChild(imagenGaru);
+                        document.body.appendChild(imagengaru);
                     }, 1000); // Cada segundo aparece una nueva imagen de Garu
                 }
             }
