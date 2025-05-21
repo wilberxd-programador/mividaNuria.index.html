@@ -39,7 +39,7 @@
 </head>
 <body>
     <h1>Mi amor, me querés mucho?</h1>
-    <img id="imagensnoopy" src="https://www.deviantart.com/bradsnoopy97/art/Sad-Snoopy-964249982" alt="Snoopy triste">
+    <img id="imagensnoopy" src="https://www.deviantart.com/bradsnoopy97/art/Sad-Snoopy-964249982" alt="https://pbs.twimg.com/profile_images/1513373983257014275/fvR8YCtY_400x400.jpg">
 
     <div>
         <span class="opcion" onclick="respuesta(true)">Sí 😍</span>
@@ -68,13 +68,13 @@
                 if (contadorNo >= 4 && !intervaloGaru) {
                     intervalogaru = setInterval(() => {
                         let imagenGaru = document.createElement("img");
-                        imagengaru.src = "https://i.pinimg.com/736x/79/78/ac/7978acf7a79680c79a1cf1de2af3865e.jpg";
-                        imagengaru.alt = "https://i.pinimg.com/originals/cd/3a/3c/cd3a3c73c632ad35ec57564bba76fdb3.jpg";
-                        imagengaru.classList.add("extra-garu");
+                        imagenGaru.src = "https://i.pinimg.com/736x/79/78/ac/7978acf7a79680c79a1cf1de2af3865e.jpg";
+                        imagenGaru.alt = "https://i.pinimg.com/originals/cd/3a/3c/cd3a3c73c632ad35ec57564bba76fdb3.jpg";
+                        imagenGaru.classList.add("extra-garu");
 
                         // Posición aleatoria en la pantalla
-                        imagengaru.style.left = Math.random() * (window.innerWidth - 150) + "px";
-                        imagengaru.style.top = Math.random() * (window.innerHeight - 150) + "px";
+                        imagenGaru.style.left = Math.random() * (window.innerWidth - 150) + "px";
+                        imagenGaru.style.top = Math.random() * (window.innerHeight - 150) + "px";
 
                         document.body.appendChild(imagengaru);
                     }, 1000); // Cada segundo aparece una nueva imagen de Garu
